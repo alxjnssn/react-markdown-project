@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import 'barecss/css/bare.min.css';
 import './App.css';
+import MarkDown from './MarkDown';
+import FormattedMarkDown from './FormattedMarkDown';
 
 function App() {
+  const [formattedMarkDown, setFormattedMarkDown] = useState('');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MarkDown setFormattedMarkDown={setFormattedMarkDown}/>
+      <FormattedMarkDown formattedMarkDown={formattedMarkDown}/>
     </div>
   );
 }
